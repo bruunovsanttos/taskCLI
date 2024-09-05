@@ -2,11 +2,13 @@ import os
 import json
 from datetime import datetime
 
+def data_atual():
+    data = datetime.now()
+    data_formatada = data.strftime("%d/%m/%y %H:%M:%S")
+    print(data_formatada)
 
-data = datetime.now()
-data_str_data = "%d/%m/%y"
-data_str_fmt = "%d/%m/%Y %H:%M:%S"
-print(data)
+
+
 
 #formato_hora = hora_momento.strftime("%dd %mm %yy %H:%M")
 
