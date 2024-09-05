@@ -7,7 +7,20 @@ def data_atual():
     data_formatada = data.strftime("%d/%m/%y %H:%M:%S")
     print(data_formatada)
 
+def add_tarefa():
+    pass
 
+def alterar_tarefa():
+    pass
+
+def tarefa_em_processo():
+    pass
+
+def terminar_tarefa():
+    pass
+
+def mostrar_tarefas():
+    pass
 
 
 #formato_hora = hora_momento.strftime("%dd %mm %yy %H:%M")
