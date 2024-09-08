@@ -8,7 +8,20 @@ def data_atual():
     print(data_formatada)
 
 def add_tarefa():
-    pass
+
+    task= {
+        "ID": 1,
+        "descrição" :"",
+        "status": "a fazer",
+        "inicio": data_atual(),
+        "modificado": data_atual()
+    }
+
+    with open ("task.json", "w", encoding="utf-8", indent=4) as arquivo:
+        json.dump(arquivo)
+    
+
+
 
 def alterar_tarefa():
     pass
