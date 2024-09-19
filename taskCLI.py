@@ -1,5 +1,6 @@
 import os
 import json
+import argaparse
 from datetime import datetime
 
 def data_atual():
@@ -19,7 +20,7 @@ def add_tarefa():
 
     with open ("task.json", "w", encoding="utf-8", indent=4) as arquivo:
         json.dump(arquivo)
-    
+
 
 
 
