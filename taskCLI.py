@@ -3,19 +3,30 @@ import json
 import argparse
 from datetime import datetime
 
+
+#formato_hora = hora_momento.strftime("%dd %mm %yy %H:%M")
 def data_atual():
     data = datetime.now()
     data_formatada = data.strftime("%d/%m/%y %H:%M:%S")
-    print(data_formatada)
+    return data_formatada
 
 def add_tarefa():
+    if os.path.exists("task.json"):
+        with open("task.json", "r", encoding="utf-8", indent=4) as arquivo:
+            tarefas = json.load(arquivo)
+
+    else:
+        tarefas = []
+
+    proximo_id = len(tarefas) + 1
+    descricao = input("Digite aqui a tarefa que você deseja marcar: ")
 
     nova_tarefa= {
-        "ID": 1,
-        "descrição" :"",
-        "status": "a fazer",
-        "inicio": data_atual(),
-        "modificado": data_atual()
+        "ID: ": proximo_id,
+        "Descrição: " :descricao,
+        "Status: ": "a fazer",
+        "Início: ": data_atual(),
+        "Modificado em : ": data_atual()
     }
 
 
