@@ -22,18 +22,18 @@ def add_tarefa():
     descricao = input("Digite aqui a tarefa que você deseja marcar: ")
 
     nova_tarefa= {
-        "ID: ": proximo_id,
-        "Descrição: " :descricao,
-        "Status: ": "a fazer",
-        "Início: ": data_atual(),
-        "Modificado em : ": data_atual()
+        "id": proximo_id,
+        "descrição" :descricao,
+        "status": "a fazer",
+        "início": data_atual(),
+        "modificado": data_atual()
     }
 
 
     with open ("task.json", "w", encoding="utf-8", indent=4) as arquivo:
         json.dump(nova_tarefa, arquivo)
 
-    print(f"Você adicionou uma nova tarefa (ID: {nova_tarefa["id", "descrição"]}")
+    print(f"Você adicionou uma nova tarefa (ID: {nova_tarefa["id"]}, Descrição: {nova_tarefa["descricao"]})")
 
 
 
