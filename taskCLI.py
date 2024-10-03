@@ -12,7 +12,7 @@ def data_atual():
 
 def add_tarefa():
     if os.path.exists("task.json"):
-        with open("task.json", "r", encoding="utf-8", indent=4) as arquivo:
+        with open("task.json", "r", encoding="utf-8") as arquivo:
             tarefas = json.load(arquivo)
 
     else:
@@ -29,6 +29,7 @@ def add_tarefa():
         "modificado": data_atual()
     }
 
+    tarefas.append(nova_tarefa)
 
     with open ("task.json", "w", encoding="utf-8", indent=4) as arquivo:
         json.dump(nova_tarefa, arquivo)
@@ -59,5 +60,24 @@ def criar_id():
 
 #with open("task.json", "w", encoding="utf-8") as arquivo:
 #    tarefas = json.load(arquivo)
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Gerenciador de tarefas CLI")
+    subparsers = parser.add_subparsers(dest="comando")
+
+
+    parser_add = subparsers.add_parser("add", help="Adicionar uma nova tarefa")
+    parser_add.add_argument("descricao", type=str, help="DEscrição de tarefa")
+
+    args = parser.parse_args()
+
+    if args.comando == "add":
+        add_tarefa(args.descricao)
+
+
+if __name__ == "__main__":
+    main()
+    
 
 
