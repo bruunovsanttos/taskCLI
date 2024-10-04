@@ -32,7 +32,7 @@ def add_tarefa():
     tarefas.append(nova_tarefa)
 
     with open ("task.json", "w", encoding="utf-8", indent=4) as arquivo:
-        json.dump(nova_tarefa, arquivo)
+        json.dump(arquivo)
 
     print(f"Você adicionou uma nova tarefa (ID: {nova_tarefa["id"]}, Descrição: {nova_tarefa["descricao"]})")
 
