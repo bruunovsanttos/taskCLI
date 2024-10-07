@@ -10,7 +10,7 @@ def data_atual():
     data_formatada = data.strftime("%d/%m/%y %H:%M:%S")
     return data_formatada
 
-def add_tarefa():
+def add_tarefa(descricao):
     if os.path.exists("task.json"):
         with open("task.json", "r", encoding="utf-8") as arquivo:
             tarefas = json.load(arquivo)
@@ -31,10 +31,10 @@ def add_tarefa():
 
     tarefas.append(nova_tarefa)
 
-    with open ("task.json", "w", encoding="utf-8", indent=4) as arquivo:
-        json.dump(arquivo)
+    with open ("task.json", "w", encoding="utf-8") as arquivo:
+        json.dump(tarefas, arquivo, indent=4)
 
-    print(f"Você adicionou uma nova tarefa (ID: {nova_tarefa["id"]}, Descrição: {nova_tarefa["descricao"]})")
+    print(f"Você adicionou uma nova tarefa ID: {nova_tarefa["id"]}, Descrição: {nova_tarefa["descrição"]}")
 
 
 
