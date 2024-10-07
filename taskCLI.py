@@ -11,7 +11,7 @@ def data_atual():
     return data_formatada
 
 def add_tarefa(descricao):
-    if os.path.exists("task.json"):
+    if os.path.exists(caminho_arquivo):
         with open("task.json", "r", encoding="utf-8") as arquivo:
             tarefas = json.load(arquivo)
 
@@ -60,7 +60,9 @@ def criar_id():
 
 #with open("task.json", "w", encoding="utf-8") as arquivo:
 #    tarefas = json.load(arquivo)
-
+diretorio = "C:/Users/bruvieira/Desktop/Nova_pasta/taskCLI/task.json"
+nome_arquivo = "task.json"
+caminho_arquivo = os.path.join(diretorio, nome_arquivo)
 
 def main():
     parser = argparse.ArgumentParser(description="Gerenciador de tarefas CLI")
