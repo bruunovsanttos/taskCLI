@@ -53,7 +53,8 @@ def mostrar_tarefas():
             if tarefas is None:
                 print("você aind anão adicionou nenhuma tarefa")
 
-    #elif se tarefas exixtir fazer isso:
+    else:
+        tarefas = []
 
         for tarefa in tarefas:
             print(tarefa["id"], tarefa["descrição"], tarefa["status"], tarefa["início"])
