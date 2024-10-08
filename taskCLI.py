@@ -36,9 +36,6 @@ def add_tarefa(descricao):
 
     print(f"Você adicionou uma nova tarefa ID: {nova_tarefa["id"]}, Descrição: {nova_tarefa["descrição"]}")
 
-
-
-
 def alterar_tarefa():
     pass
 
@@ -49,7 +46,17 @@ def terminar_tarefa():
     pass
 
 def mostrar_tarefas():
-    pass
+    if os.path.exists(caminho_arquivo):
+        with open("task.json", "r", encoding="utf-8") as arquivo:
+            tarefas = json.load(arquivo)
+
+
+    #elif se tarefas exixtir fazer isso:
+
+        for tarefa in tarefas:
+            print(tarefa["id"], tarefa["descrição"], tarefa["status"], tarefa["início"])
+
+
 
 def criar_id():
     pass
@@ -70,12 +77,17 @@ def main():
 
 
     parser_add = subparsers.add_parser("add", help="Adicionar uma nova tarefa")
-    parser_add.add_argument("descricao", type=str, help="DEscrição de tarefa")
+    parser_add.add_argument("descricao", type=str, help="Descrição de tarefa")
+
+    parser_add = subparsers.add_parser("mostrar", help="Mostrar todas as tarefas")
+    parser_add.add_argument("mostrar", type=str, help="Mostrar tarefas")
 
     args = parser.parse_args()
 
     if args.comando == "add":
         add_tarefa(args.descricao)
+    elif args.comando == "mostrar":
+        mostrar_tarefas()
 
 
 if __name__ == "__main__":
