@@ -50,14 +50,14 @@ def mostrar_tarefas():
         with open("task.json", "r", encoding="utf-8") as arquivo:
             tarefas = json.load(arquivo)
 
-            if tarefas is None:
-                print("você aind anão adicionou nenhuma tarefa")
+            if not tarefas:
+                print("você ainda não adicionou nenhuma tarefa")
+            else:
+                for tarefa in tarefas:
+                    print(tarefa["id"], tarefa["descrição"], tarefa["status"], tarefa["início"])
 
     else:
-        tarefas = []
-
-        for tarefa in tarefas:
-            print(tarefa["id"], tarefa["descrição"], tarefa["status"], tarefa["início"])
+        print("Arquivo de tarefas não encontrado")
 
 
 #formato_hora = hora_momento.strftime("%dd %mm %yy %H:%M")
