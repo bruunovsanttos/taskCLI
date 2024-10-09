@@ -5,10 +5,18 @@ from datetime import datetime
 
 
 #formato_hora = hora_momento.strftime("%dd %mm %yy %H:%M")
+
+def abrir_json():
+    if os.path.exists(caminho_arquivo):
+        with open("task.json", "r", encoding="utf-8") as arquivo:
+            tarefas = json.load(arquivo)
+
+
 def data_atual():
     data = datetime.now()
     data_formatada = data.strftime("%d/%m/%y %H:%M:%S")
     return data_formatada
+
 
 def add_tarefa(descricao):
     if os.path.exists(caminho_arquivo):
@@ -21,9 +29,9 @@ def add_tarefa(descricao):
     proximo_id = len(tarefas) + 1
     descricao = input("Digite aqui a tarefa que você deseja marcar: ")
 
-    nova_tarefa= {
+    nova_tarefa = {
         "id": proximo_id,
-        "descrição" :descricao,
+        "descrição": descricao,
         "status": "a fazer",
         "início": data_atual(),
         "modificado": data_atual()
@@ -31,19 +39,23 @@ def add_tarefa(descricao):
 
     tarefas.append(nova_tarefa)
 
-    with open ("task.json", "w", encoding="utf-8") as arquivo:
+    with open("task.json", "w", encoding="utf-8") as arquivo:
         json.dump(tarefas, arquivo, indent=4)
 
-    print(f"Você adicionou uma nova tarefa ID: {nova_tarefa["id"]}, Descrição: {nova_tarefa["descrição"]}")
+    print(f"Você adicionou uma nova tarefa ID: {nova_tarefa['id']}, Descrição: {nova_tarefa['descrição']}")
 
-def alterar_tarefa():
+
+def deletar_tarefa():
     pass
+
 
 def tarefa_em_processo():
     pass
 
+
 def terminar_tarefa():
     pass
+
 
 def mostrar_tarefas():
     if os.path.exists(caminho_arquivo):
@@ -66,14 +78,14 @@ def mostrar_tarefas():
 
 #with open("task.json", "w", encoding="utf-8") as arquivo:
 #    tarefas = json.load(arquivo)
-diretorio = "C:/Users/bruvieira/Desktop/Nova_pasta/taskCLI/task.json"
+diretorio = "C:/Users/bruvieira/Desktop/Nova_pasta/taskCLI"
 nome_arquivo = "task.json"
 caminho_arquivo = os.path.join(diretorio, nome_arquivo)
+
 
 def main():
     parser = argparse.ArgumentParser(description="Gerenciador de tarefas CLI")
     subparsers = parser.add_subparsers(dest="comando")
-
 
     parser_add = subparsers.add_parser("add", help="Adicionar uma nova tarefa")
     parser_add.add_argument("descricao", type=str, help="Descrição de tarefa")
@@ -91,6 +103,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
-
-
