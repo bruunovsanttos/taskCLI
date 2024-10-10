@@ -46,7 +46,21 @@ def add_tarefa(descricao):
 
 
 def deletar_tarefa():
-    pass
+    if os.path.exists(caminho_arquivo):
+        with open("task.json", "r", encoding="utf-8") as arquivo:
+            tarefas = json.load(arquivo)
+
+    else:
+        tarefas = []
+
+        id_tarefa = input("qual tarefa você deseja deletar: ")
+
+        for tarefa in tarefas:
+            if id_tarefa == tarefa['id']:
+                tarefa.pop(id_tarefa)
+
+
+
 
 
 def tarefa_em_processo():
