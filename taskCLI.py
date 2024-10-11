@@ -26,6 +26,7 @@ def add_tarefa(descricao):
     else:
         tarefas = []
 
+    #precisa ajustar esse contatador ta criando numero repetido
     proximo_id = len(tarefas) + 1
     descricao = input("Digite aqui a tarefa que você deseja marcar: ")
 
@@ -53,12 +54,12 @@ def deletar_tarefa():
     else:
         print("Arquivo de tarefas não encontrado")
 
-    id_tarefa = input("Qual tarefa você deseja deletar (ID): ")
+    id_tarefa = int(input("Qual tarefa você deseja deletar (ID): "))
 
     for tarefa in tarefas:
-        if tarefa['id'] == int(id_tarefa):
+        if tarefa['id'] == id_tarefa:
             tarefas.remove(tarefa)
-            print(f"Tarefa ID: {id_tarefa} Descrição: {tarefas['descrição']} deletada com sucesso.")
+            print(f"Tarefa ID: {id_tarefa} deletada com sucesso.")
             break
         else:
             print("tarefa com Id não encontrada")
@@ -111,12 +112,17 @@ def main():
     parser_add = subparsers.add_parser("mostrar", help="Mostrar todas as tarefas")
     parser_add.add_argument("mostrar", type=str, help="Mostrar tarefas")
 
+    parser_add = subparsers.add_parser("deletar", help="Deletar tarefas")
+    parser_add.add_argument("deletar", type=str, help="Deletar tarefas")
+
     args = parser.parse_args()
 
     if args.comando == "add":
         add_tarefa(args.descricao)
     elif args.comando == "mostrar":
         mostrar_tarefas()
+    elif args.comando == "deletar":
+        deletar_tarefa()
 
 
 if __name__ == "__main__":
