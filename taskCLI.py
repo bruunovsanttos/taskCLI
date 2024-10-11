@@ -51,16 +51,20 @@ def deletar_tarefa():
             tarefas = json.load(arquivo)
 
     else:
-        tarefas = []
+        print("Arquivo de tarefas não encontrado")
 
-        id_tarefa = input("qual tarefa você deseja deletar: ")
+    id_tarefa = input("Qual tarefa você deseja deletar (ID): ")
 
-        for tarefa in tarefas:
-            if id_tarefa == tarefa['id']:
-                tarefa.pop(id_tarefa)
+    for tarefa in tarefas:
+        if tarefa['id'] == int(id_tarefa):
+            tarefas.remove(tarefa)
+            print(f"Tarefa ID: {id_tarefa} Descrição: {tarefas['descrição']} deletada com sucesso.")
+            break
+        else:
+            print("tarefa com Id não encontrada")
 
-
-
+    with open("task.json", "w", encoding="utf-8") as arquivo:
+        json.dump(tarefas, arquivo, indent=4)
 
 
 def tarefa_em_processo():
