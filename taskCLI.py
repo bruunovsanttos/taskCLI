@@ -71,7 +71,25 @@ def deletar_tarefa():
 
 
 def tarefa_em_processo():
-    pass
+    if os.path.exists(caminho_arquivo):
+        with open("task.json", "r", encoding="utf-8") as arquivo:
+            tarefas = json.load(arquivo)
+
+    else:
+        id_tarefa = int(input("Qual tarefa você deseja colocar em processo (ID): "))
+
+        for tarefa in tarefas:
+
+            if tarefa['id'] == id_tarefa:
+                tarefa ['status'] = "em progresso"
+                tarefa ['modificado'] = data_atual()
+                tarefas.append(tarefa)
+                print(f"Tarefa ID: {tarefas['id']} atualizada como em processo")
+            else:
+                print("Tarefa não encontrada")
+
+    with open("task.json", "w", encoding="utf-8") as arquivo:
+        json.dump(tarefas, arquivo, indent=4)
 
 
 def terminar_tarefa():
