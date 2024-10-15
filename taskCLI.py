@@ -77,15 +77,16 @@ def tarefa_em_processo():
 
     else:
         id_tarefa = int(input("Qual tarefa você deseja colocar em processo (ID): "))
+        tarefa_encontrada = False
 
         for tarefa in tarefas:
-
             if tarefa['id'] == id_tarefa:
-                tarefa ['status'] = "em progresso"
-                tarefa ['modificado'] = data_atual()
-                tarefa.append(tarefa)
+                tarefa['status'] = "em progresso"
+                tarefa['modificado'] = data_atual()
+                tarefa_encontrada = True
+                print(f"Tarefa ID: {tarefa['id']} atualizada como em processo.")
+                break
 
-                print(f"Tarefa ID: {tarefa['id']} atualizada como em processo")
             else:
                 print("Tarefa não encontrada")
 
@@ -134,10 +135,10 @@ def main():
     parser_add.add_argument("mostrar", type=str, help="Mostrar tarefas")
 
     parser_add = subparsers.add_parser("deletar", help="Deletar tarefas")
-    parser_add.add_argument("deletar", type=str, help="Deletar tarefas")
+    parser_add.add_argument("id", type=int, help="ID da tarefa a ser deletada")
 
     parser_add = subparsers.add_parser("fazendo", help="colocar tarefa como fazendo")
-    parser_add.add_argument("fazendo", type=str, help="fazendo tarefa")
+    parser_add.add_argument("id", type=int, help="ID da tarefa a ser colocada em progresso")
 
     args = parser.parse_args()
 
@@ -146,9 +147,9 @@ def main():
     elif args.comando == "mostrar":
         mostrar_tarefas()
     elif args.comando == "deletar":
-        deletar_tarefa()
+        deletar_tarefa(args.id)# Passando o ID para a função
     elif args.comando == "fazendo":
-        tarefa_em_processo()
+        tarefa_em_processo(args.id)# Passando o ID para a função
 
 
 if __name__ == "__main__":
