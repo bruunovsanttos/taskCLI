@@ -83,7 +83,8 @@ def tarefa_em_processo():
             if tarefa['id'] == id_tarefa:
                 tarefa ['status'] = "em progresso"
                 tarefa ['modificado'] = data_atual()
-                tarefas.append(tarefa)
+                tarefa.append(tarefa)
+
                 print(f"Tarefa ID: {tarefa['id']} atualizada como em processo")
             else:
                 print("Tarefa não encontrada")
@@ -135,6 +136,9 @@ def main():
     parser_add = subparsers.add_parser("deletar", help="Deletar tarefas")
     parser_add.add_argument("deletar", type=str, help="Deletar tarefas")
 
+    parser_add = subparsers.add_parser("fazendo", help="colocar tarefa como fazendo")
+    parser_add.add_argument("fazendo", type=str, help="fazendo tarefa")
+
     args = parser.parse_args()
 
     if args.comando == "add":
@@ -143,6 +147,8 @@ def main():
         mostrar_tarefas()
     elif args.comando == "deletar":
         deletar_tarefa()
+    elif args.comando == "fazendo":
+        tarefa_em_processo()
 
 
 if __name__ == "__main__":
