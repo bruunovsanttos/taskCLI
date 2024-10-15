@@ -111,7 +111,7 @@ def mostrar_tarefas():
                 print("você ainda não adicionou nenhuma tarefa")
             else:
                 for tarefa in tarefas:
-                    print(tarefa["id"], tarefa["descrição"], tarefa["status"], tarefa["início"])
+                    print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
 
     else:
         print("Arquivo de tarefas não encontrado")
