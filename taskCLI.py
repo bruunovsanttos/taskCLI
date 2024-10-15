@@ -84,7 +84,7 @@ def tarefa_em_processo():
                 tarefa ['status'] = "em progresso"
                 tarefa ['modificado'] = data_atual()
                 tarefas.append(tarefa)
-                print(f"Tarefa ID: {tarefas['id']} atualizada como em processo")
+                print(f"Tarefa ID: {tarefa['id']} atualizada como em processo")
             else:
                 print("Tarefa não encontrada")
 
