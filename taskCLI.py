@@ -99,7 +99,28 @@ def tarefa_em_processo(id_tarefa):
 
 
 def terminar_tarefa():
-    pass
+    if not os.path.exists(caminho_arquivo):
+        print("Arquivo de tarefas não encontrado.")
+        return
+
+    with open("task.json", "r", encoding="utf-8") as arquivo:
+        tarefas = json.load(arquivo)
+
+    tarefa_encontrada = False
+
+    for tarefa in tarefas:
+        if tarefa['id'] == id_tarefa:
+            tarefa['status'] = "terminada"
+            tarefa['modificado'] = data_atual()
+            tarefa_encontrada = True
+            print(f"Tarefa ID: {tarefa['id']} atualizada como terminada.")
+            break
+
+    if not tarefa_encontrada:
+        print("Tarefa não encontrada.")
+
+    with open("task.json", "w", encoding="utf-8") as arquivo:
+        json.dump(tarefas, arquivo, indent=4)
 
 
 def mostrar_tarefas():
@@ -144,6 +165,9 @@ def main():
     parser_add = subparsers.add_parser("fazendo", help="colocar tarefa como fazendo")
     parser_add.add_argument("id", type=int, help="ID da tarefa a ser colocada em progresso")
 
+    parser_add = subparsers.add_parser("terminar", help="terminar tarefas")
+    parser_add.add_argument("id", type=int, help="ID da tarefa a ser terminada")
+
     args = parser.parse_args()
 
     if args.comando == "add":
@@ -154,6 +178,8 @@ def main():
         deletar_tarefa(args.id)# Passando o ID para a função
     elif args.comando == "fazendo":
         tarefa_em_processo(args.id)# Passando o ID para a função
+    elif args.comando == "terminar":
+        terminar_tarefa(args.id)# Passando o Id para a função
 
 
 if __name__ == "__main__":
