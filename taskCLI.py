@@ -98,7 +98,7 @@ def tarefa_em_processo(id_tarefa):
         json.dump(tarefas, arquivo, indent=4)
 
 
-def terminar_tarefa():
+def terminar_tarefa(id_tarefa):
     if not os.path.exists(caminho_arquivo):
         print("Arquivo de tarefas não encontrado.")
         return
