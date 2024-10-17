@@ -6,12 +6,6 @@ from datetime import datetime
 
 #formato_hora = hora_momento.strftime("%dd %mm %yy %H:%M")
 
-def abrir_json():
-    if os.path.exists(caminho_arquivo):
-        with open("task.json", "r", encoding="utf-8") as arquivo:
-            tarefas = json.load(arquivo)
-
-
 def data_atual():
     data = datetime.now()
     data_formatada = data.strftime("%d/%m/%y %H:%M:%S")
@@ -131,9 +125,22 @@ def mostrar_tarefas():
             if not tarefas:
                 print("você ainda não adicionou nenhuma tarefa")
             else:
-                for tarefa in tarefas:
-                    print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
+                status = int(input(f"Quais tarefas você deseja ver:\n 1 - Todas \n 2 - a fazer \n 3 - fazendo \n 4 terminadas "))
 
+                if status == 1:
+                    for tarefa in tarefas:
+                        print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
+                elif status == 2:
+                    for tarefa in tarefas == status['a fazer']:
+                        print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
+                elif status == 3:
+                    for tarefa in tarefas == status['fazendo']:
+                        print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
+                elif status == 4:
+                    for tarefa in tarefas == status['terminada']:
+                        print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
+                else:
+                    print("Não conseguimos entender seu comando, tente novamente")
     else:
         print("Arquivo de tarefas não encontrado")
 
