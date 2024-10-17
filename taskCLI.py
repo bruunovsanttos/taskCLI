@@ -130,15 +130,21 @@ def mostrar_tarefas():
                 if status == 1:
                     for tarefa in tarefas:
                         print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
+
                 elif status == 2:
-                    for tarefa in tarefas == status['a fazer']:
-                        print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
+                    for tarefa in tarefas:
+                        if tarefa ['status']== 'a fazer':
+                            print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
+
                 elif status == 3:
-                    for tarefa in tarefas == status['fazendo']:
-                        print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
+
+                    for tarefa in tarefas:
+                        if tarefa['status'] == 'fazendo':
+                            print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
                 elif status == 4:
-                    for tarefa in tarefas == status['terminada']:
-                        print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
+                    for tarefa in tarefas:
+                        if tarefa['status'] =='terminada':
+                            print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
                 else:
                     print("Não conseguimos entender seu comando, tente novamente")
     else:
