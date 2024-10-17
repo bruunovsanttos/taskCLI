@@ -135,22 +135,23 @@ def mostrar_tarefas():
                     for tarefa in tarefas:
                         if tarefa ['status']== 'a fazer':
                             print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
-                        else:
-                            print("Você não possui tarefas a serem feitas")
+
+                    print("Você não possui tarefas a serem feitas")
 
                 elif status == 3:
 
                     for tarefa in tarefas:
                         if tarefa['status'] == 'fazendo':
                             print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
-                        else:
-                            print("Você não possui tarefas em andamento")
+
+                    print("Você não possui tarefas em andamento")
+
                 elif status == 4:
                     for tarefa in tarefas:
                         if tarefa['status'] =='terminada':
                             print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
-                        else:
-                            print('Você não possui tarefas terminadas')
+
+                    print('Você não possui tarefas terminadas')
                 else:
                     print("Não conseguimos entender seu comando, tente novamente")
     else:
