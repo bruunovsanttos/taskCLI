@@ -91,6 +91,29 @@ def tarefa_em_processo(id_tarefa):
     with open("task.json", "w", encoding="utf-8") as arquivo:
         json.dump(tarefas, arquivo, indent=4)
 
+def alterar_descrição(id_tarefa):
+    if not os.path.exists(caminho_arquivo):
+        print("Arquivo de tarefas não encontrado.")
+        return
+
+    with open("task.json", "r", encoding="utf-8") as arquivo:
+        tarefas = json.load(arquivo)
+
+
+    tarefa_encontrada = False
+
+    for tarefa in tarefas:
+        if tarefa['id'] == id_tarefa:
+            tarefa ['Descrição'] = str(input("Qual descrição você deseja colocar?:  "))
+            tarefa ['modificado']= data_atual()
+            tareda_encontrada = True
+            print(f"Tarefa ID: {tarefa['id']} foi atualizada com a descrição : {tarefa['descrição']}")
+            break
+    if not tarefa_encontrada:
+        print("Tarefa não encontrada")
+
+    with open("task.json", "w", encoding="utf-8") as arquivo:
+        json.dump(tarefas, arquivo, indent=4)
 
 def terminar_tarefa(id_tarefa):
     if not os.path.exists(caminho_arquivo):
@@ -115,7 +138,6 @@ def terminar_tarefa(id_tarefa):
 
     with open("task.json", "w", encoding="utf-8") as arquivo:
         json.dump(tarefas, arquivo, indent=4)
-
 
 def mostrar_tarefas():
     if os.path.exists(caminho_arquivo):
@@ -158,8 +180,7 @@ def mostrar_tarefas():
         print("Arquivo de tarefas não encontrado")
 
 
-def alterar_descrição():
-    pass
+
 
 
 
