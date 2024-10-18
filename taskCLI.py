@@ -158,6 +158,11 @@ def mostrar_tarefas():
         print("Arquivo de tarefas não encontrado")
 
 
+def alterar_descrição():
+    pass
+
+
+
 #formato_hora = hora_momento.strftime("%dd %mm %yy %H:%M")
 
 #as para nomear o arquivo como quiser
