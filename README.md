@@ -1,5 +1,6 @@
 # TaskCLI
-Criação de um todolist com comando via cmd
+Criação de um todolist com comando via cmd  
+Este projeto veio de uma ideia do [Roadmapsh](https://roadmap.sh/projects/task-tracker)
   
 
 ### _*Bibliotacas Utilizadas*_
