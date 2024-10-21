@@ -107,7 +107,7 @@ def alterar_descrição(id_tarefa):
 
     for tarefa in tarefas:
         if tarefa['id'] == id_tarefa:
-            tarefa ['Descrição'] = str(input("Qual descrição você deseja colocar?:  "))
+            tarefa ['descrição'] = str(input("Qual descrição você deseja colocar?:  "))
             tarefa ['modificado']= data_atual()
             tareda_encontrada = True
             print(f"Tarefa ID: {tarefa['id']} foi atualizada com a descrição : {tarefa['descrição']}")

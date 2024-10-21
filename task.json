@@ -8,13 +8,6 @@
     },
     {
         "id": 3,
-        "descri\u00e7\u00e3o": "ploc",
-        "status": "terminada",
-        "in\u00edcio": "09/10/24 12:47:29",
-        "modificado": "16/10/24 12:31:12"
-    },
-    {
-        "id": 3,
         "descri\u00e7\u00e3o": "programar mais e mais ",
         "status": "a fazer",
         "in\u00edcio": "15/10/24 12:19:14",
@@ -28,20 +21,6 @@
         "modificado": "16/10/24 12:33:17"
     },
     {
-        "id": 5,
-        "descri\u00e7\u00e3o": "amar meu benzinho para o resto da vida",
-        "status": "a fazer",
-        "in\u00edcio": "15/10/24 12:20:28",
-        "modificado": "15/10/24 12:20:28"
-    },
-    {
-        "id": 6,
-        "descri\u00e7\u00e3o": "amar meu benzinho mais e mais ",
-        "status": "a fazer",
-        "in\u00edcio": "15/10/24 12:27:48",
-        "modificado": "15/10/24 12:27:48"
-    },
-    {
         "id": 7,
         "descri\u00e7\u00e3o": "amar meu bem",
         "status": "a fazer",
@@ -53,7 +32,7 @@
         "descri\u00e7\u00e3o": "amar meu benzinho mais do que hoje menos do que amanha ",
         "status": "em progresso",
         "in\u00edcio": "15/10/24 12:41:05",
-        "modificado": "15/10/24 12:50:42"
+        "modificado": "21/10/24 12:55:07"
     },
     {
         "id": 9,
@@ -68,5 +47,33 @@
         "status": "a fazer",
         "in\u00edcio": "15/10/24 12:46:08",
         "modificado": "15/10/24 12:46:08"
+    },
+    {
+        "id": 11,
+        "descri\u00e7\u00e3o": "programar",
+        "status": "a fazer",
+        "in\u00edcio": "21/10/24 12:41:17",
+        "modificado": "21/10/24 12:41:17"
+    },
+    {
+        "id": 12,
+        "descri\u00e7\u00e3o": "fazer programa",
+        "status": "em progresso",
+        "in\u00edcio": "21/10/24 12:44:19",
+        "modificado": "21/10/24 13:00:11"
+    },
+    {
+        "id": 13,
+        "descri\u00e7\u00e3o": "programar muito ",
+        "status": "a fazer",
+        "in\u00edcio": "21/10/24 12:51:11",
+        "modificado": "21/10/24 12:51:11"
+    },
+    {
+        "id": 14,
+        "descri\u00e7\u00e3o": "programar o task",
+        "status": "a fazer",
+        "in\u00edcio": "21/10/24 12:52:03",
+        "modificado": "21/10/24 12:52:03"
     }
 ]
