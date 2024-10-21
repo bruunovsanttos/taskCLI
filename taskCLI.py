@@ -24,7 +24,7 @@ def add_tarefa(descricao):
         tarefas = []
 
     #precisa ajustar esse contatador ta criando numero repetido
-    proximo_id = max(tarefa['id'] for tarefa in tarefas +1)
+    proximo_id = max(tarefa['id'] for tarefa in tarefas )+ 1
     descricao = input("Digite aqui a tarefa que você deseja marcar: ")
 
     nova_tarefa = {
@@ -43,7 +43,7 @@ def add_tarefa(descricao):
     print(f"Você adicionou uma nova tarefa ID: {nova_tarefa['id']}, Descrição: {nova_tarefa['descrição']}")
 
 
-def deletar_tarefa():
+def deletar_tarefa(id_tarefa):
     if os.path.exists(caminho_arquivo):
         with open("task.json", "r", encoding="utf-8") as arquivo:
             tarefas = json.load(arquivo)
