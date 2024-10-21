@@ -166,7 +166,7 @@ def mostrar_tarefas():
                 elif status == 3:
 
                     for tarefa in tarefas:
-                        if tarefa['status'] == 'fazendo':
+                        if tarefa['status'] == 'em progresso':
                             print(f"\n ID: {tarefa["id"]}, \n Descrição: {tarefa["descrição"]},\n Status: {tarefa["status"]},\n Data de início: {tarefa["início"]},\n Modificado em: {tarefa['modificado']}")
 
                     print("Você não possui tarefas em andamento")
