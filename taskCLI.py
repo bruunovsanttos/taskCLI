@@ -11,6 +11,9 @@ def data_atual():
     data_formatada = data.strftime("%d/%m/%y %H:%M:%S")
     return data_formatada
 
+diretorio = "C:/Users/bruvieira/Desktop/Nova_pasta/taskCLI"
+nome_arquivo = "task.json"
+caminho_arquivo = os.path.join(diretorio, nome_arquivo)
 
 def add_tarefa(descricao):
     if os.path.exists(caminho_arquivo):
@@ -21,7 +24,7 @@ def add_tarefa(descricao):
         tarefas = []
 
     #precisa ajustar esse contatador ta criando numero repetido
-    proximo_id = len(tarefas) + 1
+    proximo_id = max(tarefa['id'] for tarefa in tarefas +1)
     descricao = input("Digite aqui a tarefa que você deseja marcar: ")
 
     nova_tarefa = {
@@ -190,10 +193,6 @@ def mostrar_tarefas():
 
 #with open("task.json", "w", encoding="utf-8") as arquivo:
 #    tarefas = json.load(arquivo)
-diretorio = "C:/Users/bruvieira/Desktop/Nova_pasta/taskCLI"
-nome_arquivo = "task.json"
-caminho_arquivo = os.path.join(diretorio, nome_arquivo)
-
 
 def main():
     parser = argparse.ArgumentParser(description="Gerenciador de tarefas CLI")
