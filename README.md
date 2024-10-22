@@ -16,7 +16,7 @@ Listar todas as tarefas
 Listar todas as tarefas que foram feitas  
 Liste todas as tarefas que não foram feitas  
 Listar todas as tarefas em andamento  
-> 
+ 
 
 >Aqui estão algumas restrições para orientar a implementação:    
 Você pode usar qualquer linguagem de programação para construir este projeto.  
@@ -26,8 +26,7 @@ O arquivo JSON deve ser criado se não existir.
 Use o módulo do sistema de arquivos nativo da sua linguagem de programação para interagir com o arquivo JSON.  
 Não use nenhuma biblioteca ou estrutura externa para construir este projeto.  
 Certifique-se de lidar com erros e casos extremos com elegância.
->
->
+
   
 
 ### _*Bibliotacas Utilizadas*_
@@ -40,4 +39,14 @@ Certifique-se de lidar com erros e casos extremos com elegância.
 [JSON](https://docs.python.org/pt-br/3/library/json.html) utilizada para a manipulação do arquivo que serve de base para as atualização, adições e terminos de tarefas.
 
 [Argparse](https://docs.python.org/pt-br/3/library/argparse.html#module-argparse) a utilização dessa biblioteca consistem na maipulação correta dos argumentos dados pelo usuário do programa não havendo erros.  
+
+## Utilizando o projeto  
+
+Para utilizar o projeto você deve clonar este repositório no seu computador utilizando o link HTTPS clicando em code e utilizando o comando `git clone https://github.com/user-attachments/assets/6fcf66e4-c5cb-48c0-81e7-835ea25bcc9a`.
+
+![clonando repositório](https://github.com/user-attachments/assets/6fcf66e4-c5cb-48c0-81e7-835ea25bcc9a)  
+
+Apos isso você deve 
+
+
 
