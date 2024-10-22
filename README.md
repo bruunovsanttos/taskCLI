@@ -42,11 +42,33 @@ Certifique-se de lidar com erros e casos extremos com elegância.
 
 ## Utilizando o projeto  
 
-Para utilizar o projeto você deve clonar este repositório no seu computador utilizando o link HTTPS clicando em code e utilizando o comando `git clone https://github.com/user-attachments/assets/6fcf66e4-c5cb-48c0-81e7-835ea25bcc9a`.
+1. Para utilizar o projeto você deve clonar este repositório no seu computador utilizando o link HTTPS clicando em code e utilizando o comando `git clone https://github.com/user-attachments/assets/6fcf66e4-c5cb-48c0-81e7-835ea25bcc9a`.
 
-![clonando repositório](https://github.com/user-attachments/assets/6fcf66e4-c5cb-48c0-81e7-835ea25bcc9a)  
+    ![clonando repositório](https://github.com/user-attachments/assets/6fcf66e4-c5cb-48c0-81e7-835ea25bcc9a)   
 
-Apos isso você deve 
+
+2. Apos isso você deve abrir seu prompt de comando para rodar o projeto
+   ![image](https://github.com/user-attachments/assets/edd37825-1b68-49ba-8902-897f075d02a3) 
+   ![image](https://github.com/user-attachments/assets/62d7e0e4-c61a-47e3-8d3c-70f06408af72)
+
+
+
+3. Para rodar o programa você pode arratas para dentro da sua linha de comando o arquivo `taskCLI.py` que vai lhe dar o caminho do programa ou inserir o caminho manualmente (recomendo a primeira opção)
+
+
+4. Os comandos para rodar o programa são: 
+### add "tarefa"
+      para adicionar alguma tarefa a ser feita 
+### mostrar "tarefa"
+      aqui você terá a opção de mostrar todas as tarefas, apenas tarefas
+      a fazer, apenas tarefas fazendo, apenas tarefas terminadas
+### deletar
+      Nesta função caso ocorra algum erro você pdoe deletar a tarefa pelo seu numero de 'id'.
+### fazendo
+      Aqui você podera alterar o status da tarefa para fazendo
+### terminar
+      Nesta função você poderá atualizar o status de uma tarefa para terminada
+      
 
 
 
