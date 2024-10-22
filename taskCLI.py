@@ -213,6 +213,10 @@ def main():
     parser_add = subparsers.add_parser("terminar", help="terminar tarefas")
     parser_add.add_argument("id", type=int, help="ID da tarefa a ser terminada")
 
+    parser_add = subparsers.add_parser("alterar", help="alterar descrição de tarefas")
+    parser_add.add_argument("id", type=int, help="ID da tarefa a ser alterada")
+
+
     args = parser.parse_args()
 
     if args.comando == "add":
@@ -225,6 +229,8 @@ def main():
         tarefa_em_processo(args.id)# Passando o ID para a função
     elif args.comando == "terminar":
         terminar_tarefa(args.id)# Passando o Id para a função
+    elif args.comando == "alterar":
+        alterar_descrição(args.id)
 
 
 if __name__ == "__main__":

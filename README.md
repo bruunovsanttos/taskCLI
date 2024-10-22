@@ -62,12 +62,14 @@ Certifique-se de lidar com erros e casos extremos com elegância.
 ### mostrar "tarefa"
       aqui você terá a opção de mostrar todas as tarefas, apenas tarefas
       a fazer, apenas tarefas fazendo, apenas tarefas terminadas
-### deletar
+### deletar 'id'
       Nesta função caso ocorra algum erro você pdoe deletar a tarefa pelo seu numero de 'id'.
-### fazendo
+### fazendo 'id'
       Aqui você podera alterar o status da tarefa para fazendo
-### terminar
+### terminar 'id'
       Nesta função você poderá atualizar o status de uma tarefa para terminada
+### alterar 'id'
+      Função para alterar descrição de tarefa.
       
 
 
