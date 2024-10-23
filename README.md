@@ -59,17 +59,29 @@ Certifique-se de lidar com erros e casos extremos com elegância.
 4. Os comandos para rodar o programa são: 
 ### add "tarefa"
       para adicionar alguma tarefa a ser feita 
+
+![image](https://github.com/user-attachments/assets/41571e39-c4d4-4325-98bd-41cba94a107c)
 ### mostrar "tarefa"
       aqui você terá a opção de mostrar todas as tarefas, apenas tarefas
-      a fazer, apenas tarefas fazendo, apenas tarefas terminadas
+      a fazer, apenas tarefas fazendo, apenas tarefas terminadas selecionando o número que deseja. 
+![image](https://github.com/user-attachments/assets/c7f5b000-e8ac-4cc0-ad27-f4163d969ef9)
+
 ### deletar 'id'
       Nesta função caso ocorra algum erro você pdoe deletar a tarefa pelo seu numero de 'id'.
+
+![image](https://github.com/user-attachments/assets/d0601309-f0b9-4f26-993b-159ef024a04b)
 ### fazendo 'id'
       Aqui você podera alterar o status da tarefa para fazendo
+
+![image](https://github.com/user-attachments/assets/0cafa168-6c2d-4fff-a934-0ea26ba23e45)
 ### terminar 'id'
       Nesta função você poderá atualizar o status de uma tarefa para terminada
+
+![image](https://github.com/user-attachments/assets/5837fb20-79ef-4b25-baa3-79f8c1385e0d)
 ### alterar 'id'
       Função para alterar descrição de tarefa.
+
+![image](https://github.com/user-attachments/assets/cafe1d14-81ab-4598-8d07-321deeddf6b4)
       
 
 
