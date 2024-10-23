@@ -109,7 +109,8 @@ def alterar_descrição(id_tarefa):
         if tarefa['id'] == id_tarefa:
             tarefa ['descrição'] = str(input("Qual descrição você deseja colocar?:  "))
             tarefa ['modificado']= data_atual()
-            tareda_encontrada = True
+            tarefa_encontrada = True
+
             print(f"Tarefa ID: {tarefa['id']} foi atualizada com a descrição : {tarefa['descrição']}")
             break
     if not tarefa_encontrada:
